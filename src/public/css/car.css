@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/* NTS UIT Development Team JHN 130819 */
+
+/* Common */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:'나눔고딕',NanumGothic,'돋움',Dotum,Helvetica,sans-serif;font-size:13px}
+img,fieldset{border:0}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none}
+a:hover,a:active,a:focus{text-decoration:none}
+.blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+/* Layout */
+body{background:#f0f1f3}
+/* etc */
+button{display: block;border:0;background:none;padding:0;font-size:inherit;overflow:visible;cursor:pointer}
+button::-moz-focus-inner{padding:0;border:0}
+button span{*visibility:hidden}
+table{width:100%;border:0;border-collapse:collapse;border-spacing:0;table-layout:fixed}
+table td,
+table th{border:0}
+
+button[disabled] {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: auto;
+}
+.list_wrap {
+  position: relative;
+  width: 100%;
+}
+.list_wrap .pagination {
+  position: relative;
+}
+.prev,
+.next {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  border: 1px solid #000;
+  background-color: #fff;
+  text-align: center;
+}
+.list_wrap .prev,
+.list_wrap .next {
+  width: 28px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 30px;
+  bottom: 0;
+}
+.list_wrap .PhotoList {
+  position: relative;
+  overflow: hidden;
+  width: 920px;
+  height: 60px;
+  margin: 0 auto;
+  font-size: 0;
+  white-space: nowrap;
+}
+.PhotoList .photo_item {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 92px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transform: translateX(0px);
+}
+.PhotoList .photo_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.PhotoList .photo_item:hover::after,
+.PhotoList .photo_item.is_selected::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 6px solid green;
+  content: '';
+}
+.PhotoList .photo_item:empty:hover {
+  cursor: auto;
+}
+.PhotoList .photo_item:empty::after {
+  content: none;
+}
+.PhotoList .photo_item:empty {
+  background-image: url(../images/no_image.png);
+  background-size: cover;
+  cursor: auto;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+.viewer {
+  position: relative;
+  margin-top: 50px;
+}
+.viewer .prev,
+.viewer .next {
+  width: 80px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 50px;
+  font-weight: 800;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.PhotoViewer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 652px;
+  font-size: 0;
+  white-space: nowrap;
+}
+.PhotoViewer .viewer_item {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0px);
+}
+.PhotoViewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
