@@ -8,10 +8,11 @@ import NextPaginateButton from './components/NextPaginateButton.js';
 import PrevPhotoButton from './components/PrevPhotoButton.js';
 import NextPhotoButton from './components/NextPhotoButton.js';
 
-const API_PATH = '../../json/sample.json';
+import dummy from './dummy.js';
+
 const { 
   deepCopy, 
-  fetchData, 
+  fetchData,
   getHashCode 
 } = utils;
 
@@ -35,7 +36,7 @@ const getRefinedData = (data) => {
   return refinedData;
 };
 
-(function() {
+(async function() {
   'use strict';
   // components 인스턴스들 생성 (component에서는 'setState'이벤트를 subscirbe)
   new PhotoList();
@@ -45,16 +46,7 @@ const getRefinedData = (data) => {
   new PrevPhotoButton();
   new NextPhotoButton();
 
-  // 초기 data ajax call
-  new Promise((resolve, reject) => {
-    fetchData(API_PATH, response => {
-      const data = JSON.parse(response);
-      // 앱에 맞게 데이터 정제
-      resolve(getRefinedData(data));
-    });
-  }).then((refinedData) => {
-    const { items } = refinedData;
-    // 데이터 dispatch. -> Proxy setState -> 자동으로 render함수 호출
-    store.dispatch('setPhotoList', { items });
-  });
+  const refinedData = await fetchData(dummy);
+  const { items } = refinedData;
+  store.dispatch('setPhotoList', { items });
 })();
