@@ -46,7 +46,8 @@ const getRefinedData = (data) => {
   new PrevPhotoButton();
   new NextPhotoButton();
 
-  const refinedData = await fetchData(dummy);
+  const refinedData = await fetchData(getRefinedData(dummy));
   const { items } = refinedData;
+  console.log('items', refinedData);
   store.dispatch('setPhotoList', { items });
 })();

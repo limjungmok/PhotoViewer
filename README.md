@@ -29,7 +29,6 @@
 
 
 ## Structure/Components
-
 - `PhotoViewer.js`: 중앙 메인 이미지화면
 - `PrevPhotoButton.js`: 메인 이미지 이전화면 이동 버튼
 - `NextPhotoButton.js`: 메인 이미지 다음화면 이동 버튼
@@ -39,6 +38,8 @@
 
 
 ## Structure/Components
+![](./diagram.png)
+
 - `pubsub.js`
   - Pub/Sub Pattern Interface. 
   - State-Reactive 형태의 디자인 패턴을 위한 선택
@@ -58,7 +59,5 @@
   - 상태값을 Reactive 하게 관리하기 위해 Proxy 객체로 래핑한 state
 - `actions.js`: 액션을 생성하여 모아둔다. 
 - `reducers.js`: 상태를 변경할 함수
-
-
 
 
