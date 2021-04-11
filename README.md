@@ -28,7 +28,7 @@
 ```
 
 
-## Structure/Components
+## Structure/components
 - `PhotoViewer.js`: 중앙 메인 이미지화면
 - `PrevPhotoButton.js`: 메인 이미지 이전화면 이동 버튼
 - `NextPhotoButton.js`: 메인 이미지 다음화면 이동 버튼
@@ -37,7 +37,7 @@
 - `NextPaginationButton.js`: 상단 소형 썸네일 페이지 이동 버튼
 
 
-## Structure/Components
+## Structure/lib
 ![](./diagram.png)
 
 - `pubsub.js`
