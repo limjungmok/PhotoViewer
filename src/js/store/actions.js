@@ -1,8 +1,8 @@
 export default {
   setPhotoList(context, payload) {
-    context.commit('setPhotoList', payload);
+    context.reducer('setPhotoList', payload);
   },
   setCurrentIndex(context, payload) {
-    context.commit('setCurrentIndex', payload);
+    context.reducer('setCurrentIndex', payload);
   }
 };

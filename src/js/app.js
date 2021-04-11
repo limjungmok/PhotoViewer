@@ -35,15 +35,15 @@ const getRefinedData = (data) => {
   return refinedData;
 };
 
-const App = (function() {
+(function() {
   'use strict';
   // components 인스턴스들 생성 (component에서는 'setState'이벤트를 subscirbe)
-  const photoList = new PhotoList();
-  const photoViewer = new PhotoViewer();
-  const prevPaginateButton = new PrevPaginateButton();
-  const nextPaginateButton = new NextPaginateButton();
-  const prevPhotoButon = new PrevPhotoButton();
-  const nextPhotoButton = new NextPhotoButton();
+  new PhotoList();
+  new PhotoViewer();
+  new PrevPaginateButton();
+  new NextPaginateButton();
+  new PrevPhotoButton();
+  new NextPhotoButton();
 
   // 초기 data ajax call
   new Promise((resolve, reject) => {
